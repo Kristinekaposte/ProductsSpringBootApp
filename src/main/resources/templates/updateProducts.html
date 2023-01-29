@@ -9,37 +9,59 @@
 <section>
   <a href="/">Back to log in Page</a>
   <a href="/addProducts">Add Products To List</a>
-  <a href="/viewProducts">View Products</a>
-  <a href="/updateProducts">Update Products</a>
-  <a href="/deleteProduct">Delete Products</a>
+  <a href="/viewProducts">View All Products</a>
 </section>
 
-<h3>Replace data in list by array id</h3>
-<form  method="get">
-  <label> ID: </label><br>
-  <input name="id"> <br>
+<h3>Edit Product</h3>
+<br>
 
-  <label> Name: </label><br>
-  <input name="productName"> <br>
+<form th:action="@{/products/edit/{id} (id=*{id})}" th:object="${editProducts}" method="POST">
+<table>
+  <tr>
+    <td>product ID:</td>
+    <td> <input type="text" disabled="disabled" name="id" th:field="*{id}" /></td>
+  </tr>
 
-  <label> Quantity: </label><br>
-  <input type="number" name="quantity" min="0" value="0"> <br>
+  <tr>
+    <td>UUID:</td>
+    <td> <input type="text" hidden="hidden" name="uuid" th:field="*{uuid}" /></td> <!-- DOES NOT WORK IF NOT HIDEN -->
+  </tr>
 
-  <label> Price: </label><br>
-  <input name="price" min="0" value="0.0" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"> <br>
+  <tr>
+    <td>Name:</td>
+    <td> <input type="text" name="productName" th:field="*{name}" /></td>
+  </tr>
 
-  <label>  Description: </label><br>
-  <input name="description"> <br>
+  <tr>
+    <td>Quantity:</td>
+    <td> <input type="text" name="quantity" th:field="*{quantity}" /></td>
+  </tr>
 
-  <label> isAvailable: </label><br>
-  <select name="isAvailable">
-    <option value="True">True</option>
-    <option value="False">False</option>
-  </select><br>
+  <tr>
+    <td>Price:</td>
+    <td> <input type="text" name="price" th:field="*{price}" /></td>
+  </tr>
 
+  <tr>
+    <td>Description:</td>
+    <td> <input type="text" name="description" th:field="*{description}" /></td>
+  </tr>
 
-  <button type="submit">Update</button>
+  <tr>
+    <td>isAvailable:</td>
+    <td>
+      <input type="text" name="isAvailable" th:field="*{available}" />
+    </td>
+  </tr>
+  <br>
 
+</table>
+  <button type="submit" value="Submit">Update</button>
 </form>
+
+
+
+
+
 </body>
 </html>

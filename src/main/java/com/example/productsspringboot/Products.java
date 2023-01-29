@@ -1,29 +1,40 @@
 package com.example.productsspringboot;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 public class Products {
     private UUID uuid;
+    private int id;
     private String name;
     private int quantity;
     private double price;
     private String description;
     private boolean isAvailable;
-
-
     public Products (){
     }
-    public Products(String name, int quantity, double price,String description, boolean isAvailable) {
-       this.uuid=UUID.randomUUID();
+    public Products(int id,String name, int quantity, double price,String description, boolean isAvailable) {
+        this.id=id;
+        this.uuid=UUID.randomUUID();
         this.name=name;
         this.quantity=quantity;
         this.price=price;
         this.description=description;
         this.isAvailable=isAvailable;
+
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public UUID getUuid() {
-        return uuid;
+        return this.uuid;
     }
 
     public void setUuid(UUID uuid) {
@@ -79,6 +90,7 @@ public class Products {
     public String toString() {
         return "Products{" +
                 "uuid=" + uuid +
+                ", id=" + id +
                 ", name='" + name + '\'' +
                 ", quantity=" + quantity +
                 ", price=" + price +
