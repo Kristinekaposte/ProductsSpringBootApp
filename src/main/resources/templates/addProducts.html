@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Products to list</title>
+</head>
+<body>
+<section>
+  <a href="/">Back to log in Page</a>
+  <a href="/addProducts">Add Products To List</a>
+  <a href="/viewProducts">View Products</a>
+    <a href="/updateProducts">Update Products</a>
+    <a href="/deleteProduct">Delete Products</a>
+</section>
+
+<form action="/addProducts" method="get">
+  <label> Name: </label><br>
+  <input name="productName"> <br>
+
+  <label> Quantity: </label><br>
+  <input type="number" name="quantity" min="0" value="0"> <br>
+
+  <label> Price: </label><br>
+  <input name="price" min="0" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"> <br>
+
+  <label>  Description: </label><br>
+  <input name="description"> <br>
+
+  <label> isAvailable: </label><br>
+     <select name="isAvailable">
+        <option value="True">True</option>
+        <option value="False">False</option>
+     </select><br>
+
+
+  <button type="submit"> Add to list</button>
+
+</form>
+
+</body>
+</html>

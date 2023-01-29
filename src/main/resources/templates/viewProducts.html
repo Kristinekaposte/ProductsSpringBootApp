@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+  <title>View All Products</title>
+</head>
+<body>
+<!-- VIEW PRODUCTS -->
+<section>
+  <a href="/">Back to log in Page</a>
+  <a href="/addProducts">Add Products To List</a>
+  <a href="/viewProducts">VIEW ADD DELETE Products</a>
+  <a href="/deleteProduct">Delete Products</a>
+</section>
+
+
+
+<h2>LIST OF PRODUCTS</h2>
+<section>
+  <!-- we will display all PRODUCTS here -->
+  <h5 th:if="${listOfAllProducts.isEmpty()}"> There are no Products</h5>
+  <table border="1" th:if="!${listOfAllProducts.isEmpty()}" >
+    <tr>
+        <td>UUID</td>
+        <td>NAME</td>
+        <td>QUANTITY</td>
+        <td>PRICE</td>
+        <td>DESCRIPTION</td>
+      <td>IS_AVAILABLE</td>
+      <td> </td>
+    </tr>
+
+    <tr th:each="newProductList : ${listOfAllProducts}">
+      <td th:text="${newProductList.getUuid()}"></td>
+      <td th:text="${newProductList.getName()}"></td>
+      <td th:text="${newProductList.getQuantity()}"></td>
+      <td th:text="${newProductList.getPrice()}"></td>
+      <td th:text="${newProductList.getDescription()}"></td>
+      <td th:text="${newProductList.isAvailable()}"></td>
+      <td>
+
+        <a href="#" th:href="@{/products/edit/{id} (id=${newProductList.getUuid()})}"> Edit</a>
+        <a href="#" th:href="@{/products/delete/{id} (id=${newProductList.getUuid()})}">Delete</a>
+      </td>
+
+    </tr>
+  </table>
+
+
+</section>
+
+<!-- UPDATE PRODUCTS -->
+
+<h3>UPDATE PRODUCT BY ARRAY INDEX</h3>
+<form method="get">
+  <label> ID: </label><br>
+  <input name="id" REQUIRED> <br>
+
+  <label> Name: </label><br>
+  <input name="productName"> <br>
+
+  <label> Quantity: </label><br>
+  <input type="number" name="quantity" min="0" value="0"> <br>
+
+  <label> Price: </label><br>
+  <input name="price" min="0" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"> <br>
+
+  <label>  Description: </label><br>
+  <input name="description"> <br>
+
+  <label> isAvailable: </label><br>
+  <select name="isAvailable">
+    <option value="True">True</option>
+    <option value="False">False</option>
+  </select><br>
+  <button type="submit">Update</button>
+</form>
+
+<!-- DELETE PRODUCT -->
+<h3>DELETE PRODUCT FROM LIST</h3>
+<section>
+  <form method="get">
+    <label> Add product array index to delete:</label>
+    <input type="number" name="number" value="0" min="0">
+    <button type="submit"> Delete</button>
+  </form>
+</section>
+
+</body>
+</html>
