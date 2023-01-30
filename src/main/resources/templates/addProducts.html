@@ -3,41 +3,49 @@
 <head>
     <meta charset="UTF-8" >
     <title>Add Products to list</title>
-    <link rel="stylesheet" href="">
+    <link href="/styles.css" rel="stylesheet">
 </head>
 <body>
-<section>
+<section class="navmenu">
   <a href="/">Back to log in Page</a>
   <a href="/addProducts">Add Products To List</a>
   <a href="/viewProducts">View All Products</a>
 </section>
 
-<form action="/addProducts" method="get">
+<section class="main">
+    <h2>ADD PRODUCTS</h2>
+<form  action="/addProducts" method="get">
     <label> ID: </label><br>
-    <input name="id" > <br>
+    <input  type="text" name="id" REQUIRED> <br>
 
   <label> Name: </label><br>
-  <input name="productName"> <br>
+  <input  type="text" name="productName" REQUIRED> <br>
 
   <label> Quantity: </label><br>
-  <input type="number" name="quantity" min="0" value="0"> <br>
+  <input  type="number" name="quantity" min="0" value="0" REQUIRED> <br>
 
   <label> Price: </label><br>
-  <input name="price" min="0" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"> <br>
+  <input  type="text" name="price" min="0" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); "> <br>
 
   <label>  Description: </label><br>
-  <input name="description"> <br>
+  <!-- <input class="inputStyle"  type="text" name="description" REQUIRED> <br> -->
+        <textarea class="inputStyle" name="description" REQUIRED> </textarea><br>
 
   <label> isAvailable: </label><br>
-     <select name="isAvailable">
+     <select class="select-items"  name="isAvailable" >
         <option value="True">True</option>
         <option value="False">False</option>
      </select><br>
 
-
   <button type="submit"> Add to list</button>
-
 </form>
+
+</section>
+
+
+<footer>
+    <p class="pFooter"> 2023</p>
+</footer>
 
 </body>
 </html>

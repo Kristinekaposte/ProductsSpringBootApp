@@ -41,7 +41,7 @@ public class ProductsController {
     @GetMapping("/products/edit/{id}")
     public String editProducts(@PathVariable("id") Integer id,Model model){
         if (id!=null) {
-            model.addAttribute("editProducts", productsList.get(id));
+            model.addAttribute("editProducts", productsList.get(id)); // recognises only as array index not as id!!!
         }
         return "updateProducts";
     }

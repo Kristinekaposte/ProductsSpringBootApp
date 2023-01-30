@@ -3,31 +3,31 @@
 <head>
   <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
   <title>View All Products</title>
+    <link href="/styles.css" rel="stylesheet">
 </head>
 <body>
 <!-- VIEW PRODUCTS -->
-<section>
+<section class="navmenu">
   <a href="/">Back to log in Page</a>
   <a href="/addProducts">Add Products To List</a>
   <a href="/viewProducts">View All Products</a>
+
 </section>
 
-
-
-<h2>LIST OF PRODUCTS</h2>
-<section>
+<section class="main">
+    <h2>PRODUCTS LIST</h2>
   <!-- we will display all PRODUCTS here -->
-  <h5 th:if="${listOfAllProducts.isEmpty()}"> There are no Products</h5>
-  <table border="1" th:if="!${listOfAllProducts.isEmpty()}" >
+  <h3 th:if="${listOfAllProducts.isEmpty()}"> NO PRODUCTS ADDED YET</h3>
+  <table  th:if="!${listOfAllProducts.isEmpty()}" class="table-header">
     <tr>
-        <td>ID</td>
-        <td>UUID</td>
-        <td>NAME</td>
-        <td>QUANTITY</td>
-        <td>PRICE</td>
-        <td>DESCRIPTION</td>
-      <td>IS_AVAILABLE</td>
-      <td> </td>
+        <th>ID</th>
+        <th>UUID</th>
+        <th>NAME</th>
+        <th>QUANTITY</th>
+        <th>PRICE</th>
+        <th>DESCRIPTION</th>
+      <th>IS_AVAILABLE</th>
+      <th> </th>
     </tr>
 
     <tr th:each="newProductList : ${listOfAllProducts}">
@@ -38,14 +38,69 @@
       <td th:text="${newProductList.getPrice()}"></td>
       <td th:text="${newProductList.getDescription()}"></td>
       <td th:text="${newProductList.isAvailable()}"></td>
-      <td>
-  <a href="#" th:href="@{/products/edit/{id} (id=${newProductList.id})}"> Edit</a>
-  <a href="#" th:href="@{/products/delete/{id} (id=${newProductList.id})}"> Delete</a>
+      <td class="tableButtonCollumn">
+  <a class="buttonEdit" href="#" th:href="@{/products/edit/{id} (id=${newProductList.id})}"> Edit</a>
+  <a class="buttonDelete" href="#" th:href="@{/products/delete/{id} (id=${newProductList.id})}"> Delete</a>
       </td>
 
     </tr>
   </table>
 </section>
+
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+<p>Some text some text some text some text..</p>
+
+
+<footer>
+    <p class="pFooter"> 2023</p>
+</footer>
 
 </body>
 </html>

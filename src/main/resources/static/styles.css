@@ -1,0 +1,148 @@
+    /* specific for all html files   */
+
+    body{
+        background-image:url("abstract_blue.png");
+        margin:0;
+        background-size: 100%;
+    }
+    .pFooter{
+        text-align: center;
+    }
+    footer {
+        margin-top: 200px;
+        padding: 4px;
+        width: 100%;
+        background-color: #402da4;
+        color: white;
+        position: page;
+
+        bottom:0;
+    }
+    .navmenu {
+        overflow: hidden;
+        background-color: #402da4;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        padding-top: 20px;
+    }
+    .navmenu a {
+
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    .navmenu a:hover {
+        background: #ddd;
+        color: black;
+    }
+
+    .main {
+        padding: 50px;
+        margin-top: 50px;
+    }
+    h2{
+        text-align: center;
+    }
+
+    /*  */
+       input[type=text], input[type=number], select{
+            width: 40%;
+            padding: 5px 20px;
+           margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button[type=submit] {
+        width: 10%;
+        background-color: #028e08 ;
+        color: white;
+        padding: 14px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    button:hover {background-color: darkgreen;}
+    label, .updatelabels{
+        padding: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+
+    /* specific for view products   */
+    table {
+        width: fit-content;
+    }
+    .tableButtonCollumn{
+        width: 15%!important;
+    }
+    .table-header{
+        border-collapse: collapse;
+        width: 100%;
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: left;
+        background-color:lightgray;
+        color: black;
+
+    }
+    .table-header, th, td {
+        border: 1px solid black ;
+        padding: 8px;
+    }
+    .table-header tr:nth-child(even){background-color: white;}
+
+    .table-header tr:hover {background-color:darkgrey ;}
+
+    .table-header th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: #5c9326;
+        color: white;
+    }
+
+    .buttonEdit:hover, .buttonDelete:hover {
+        background-color: aqua  ;
+    }
+    .buttonEdit {
+        background-color: #028e08;
+        color: white;
+        padding: 7px 30px;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+        margin-right: 5px;
+    }
+    .buttonDelete {
+        background-color: red;
+        color: white;
+        padding: 7px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .inputStyle{
+        width: 40%;
+        padding: 8px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        height: 87px;
+
+    }
+    .select-items {
+        font-size: 18px;
+    }
+

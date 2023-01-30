@@ -3,65 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Update</title>
+  <link href="/styles.css" rel="stylesheet">
 </head>
 <body>
 
-<section>
+<section class="navmenu">
   <a href="/">Back to log in Page</a>
   <a href="/addProducts">Add Products To List</a>
   <a href="/viewProducts">View All Products</a>
 </section>
-
-<h3>Edit Product</h3>
+ <section class="main" >
+   <h2>EDIT PRODUCT</h2>
 <br>
-
 <form th:action="@{/products/edit/{id} (id=*{id})}" th:object="${editProducts}" method="POST">
-<table>
-  <tr>
-    <td>product ID:</td>
-    <td> <input type="text" disabled="disabled" name="id" th:field="*{id}" /></td>
-  </tr>
 
-  <tr>
-    <td>UUID:</td>
-    <td> <input type="text" hidden="hidden" name="uuid" th:field="*{uuid}" /></td> <!-- DOES NOT WORK IF NOT HIDEN -->
-  </tr>
+  <label> ID: </label><br>
+    <input type="text" disabled="disabled" name="id" th:field="*{id}" /><br>
 
-  <tr>
-    <td>Name:</td>
-    <td> <input type="text" name="productName" th:field="*{name}" /></td>
-  </tr>
+  <label >UUID:</label><br>
+    <input type="text" hidden="hidden" name="uuid" th:field="*{uuid}" /><br> <!-- DOES NOT WORK IF NOT HIDEN -->
 
-  <tr>
-    <td>Quantity:</td>
-    <td> <input type="text" name="quantity" th:field="*{quantity}" /></td>
-  </tr>
+  <label>Name: </label><br>
+    <input  type="text" name="productName" th:field="*{name}" /><br>
 
-  <tr>
-    <td>Price:</td>
-    <td> <input type="text" name="price" th:field="*{price}" /></td>
-  </tr>
+  <label>Quantity: </label><br>
+    <input  type="text" name="quantity" th:field="*{quantity}"><br>
 
-  <tr>
-    <td>Description:</td>
-    <td> <input type="text" name="description" th:field="*{description}" /></td>
-  </tr>
+  <label>Price: </label><br>
+   <input  type="text" name="price" th:field="*{price}"  min="0" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1'); "/><br>
 
-  <tr>
-    <td>isAvailable:</td>
-    <td>
-      <input type="text" name="isAvailable" th:field="*{available}" />
-    </td>
-  </tr>
-  <br>
+  <label>Description: </label><br>
+    <!--  <input class="updateinput" type="text" name="description" th:field="*{description}" /> -->
+      <textarea class="inputStyle" name="description" th:field="*{description}"> </textarea><br>
 
-</table>
+  <label>isAvailable: </label><br>
+      <input type="text" name="isAvailable" th:field="*{available}" /><br>
+
   <button type="submit" value="Submit">Update</button>
+
 </form>
 
+ </section>
 
-
-
+<footer>
+  <p class="pFooter"> 2023</p>
+</footer>
 
 </body>
 </html>
